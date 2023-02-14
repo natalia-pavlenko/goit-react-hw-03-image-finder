@@ -18,9 +18,8 @@ export class App extends Component {
     gallery: [],
     modalUrl: null,
     showModal: false,
-    isLoading: false,
     page: 1,
-    lastPage: 1,
+    
   };
 
   componentDidUpdate(_, prevState) {
