@@ -20,7 +20,6 @@ export class App extends Component {
     showModal: false,
     isLoading: false,
     page: 1,
-    showBtn: false,
     lastPage: 1,
   };
 

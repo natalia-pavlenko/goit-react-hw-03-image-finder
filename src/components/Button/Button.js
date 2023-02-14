@@ -1,5 +1,5 @@
 import Loader from 'components/Loader';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 const Button = ({ handleClickLoadMoreBtn }) => {
   return (
     <>
