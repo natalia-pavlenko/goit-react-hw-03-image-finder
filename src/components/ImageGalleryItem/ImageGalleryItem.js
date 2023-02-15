@@ -1,18 +1,32 @@
-import React from 'react';
+import { Component } from 'react';
 // import PropTypes from 'prop-types';
+import Modal from 'components/Modal/Modal';
+export class ImageGalleryItem extends Component {
+  state = {
+    largeImg: '',
+    onShowe: false,
+  };
 
-const ImageGalleryItem = ({ gallery }) => {
-  return (
-    <>
-      {gallery.map(({ webformatURL, id }) => {
-        return (
-          <li key={id}>
-            <img src={webformatURL}  alt=''/>
-          </li>
-        );
-      })}
-    </>
-  );
-};
+  largeImgModal = img => {
+    this.setState(state => ({ onShowe: !state.onShowe }));
+    this.setState({ largeImg: img });
+  };
+
+  render() {
+    const { gallery } = this.props;
+    return (
+      <>
+        {gallery.map(({ webformatURL, id, largeImageURL }) => {
+          return (
+            <li key={id} onClick={() => this.largeImgModal(largeImageURL)}>
+              <img src={webformatURL} alt="" />
+            </li>
+          );
+        })}
+        {this.state.onShowe && <Modal largeImg={this.state.largeImg} />}
+      </>
+    );
+  }
+}
 
 export default ImageGalleryItem;

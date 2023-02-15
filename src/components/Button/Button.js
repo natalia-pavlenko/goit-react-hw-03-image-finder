@@ -1,10 +1,13 @@
+// import React from 'react';
 // import Loader from 'components/Loader';
-// import PropTypes from 'prop-types';
-// const Button = ({ handleClickLoadMoreBtn }) => {
+// // import PropTypes from 'prop-types';
+
+// const Button = ({onClick, isLoading }) => {
 //   return (
 //     <>
-//       {showBtn && (
-//         <button type="submit" onClick={this.handleClickLoadMoreBtn}>
+//       {isLoading ? (
+//         <Loader />
+//       ) :(<button type="submit" onClick={onClick}>
 //           Load more
 //         </button>
 //       )}
@@ -12,3 +15,6 @@
 //   );
 // };
 // export default Button;
+
+
+

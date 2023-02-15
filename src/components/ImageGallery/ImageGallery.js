@@ -1,9 +1,10 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = ({ gallery }) => {
+const ImageGallery = ({ gallery}) => {
   return (
     <ul>
-      <ImageGalleryItem gallery={gallery} />
+      <ImageGalleryItem gallery={gallery}
+      />
     </ul>
   );
 };

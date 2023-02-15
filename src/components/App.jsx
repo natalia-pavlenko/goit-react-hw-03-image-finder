@@ -14,14 +14,15 @@ import ImageGallery from 'components/ImageGallery/ImageGallery';
 
 export class App extends Component {
   state = {
-    searchQuery: '',
     gallery: [],
+    searchQuery: '',
     modalUrl: null,
     showModal: false,
+    // isLoading: false,
     page: 1,
-    
   };
 
+ 
   componentDidUpdate(_, prevState) {
     const { searchQuery, page } = this.state;
     if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
@@ -44,15 +45,18 @@ export class App extends Component {
     }));
   };
 
+  // toggleIsLoading = () => {
+  //   this.setState(prevState => ({ isLoading: !prevState.isLoading }));
+  // };
+
   toggelModal = () => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
   };
-
+ 
   render() {
     const { gallery, showModal, modalUrl } = this.state;
     return (
       <>
-        <h1>app title</h1>
         <Searchbar onSubmit={this.getSearchQuery} />
         {gallery && <ImageGallery gallery={gallery} />}
         <button type="button" onClick={this.toggelModal}>
@@ -65,6 +69,10 @@ export class App extends Component {
             </div>
           </Modal>
         )}
+        {/* <ImageGalleryItem 
+          handleOnClickImage={this.toggelModal}
+          /> */}
+        {/* <Button onClick={this.handleClickLoadMoreBtn} isLoading={isLoading} /> */}
       </>
     );
   }
