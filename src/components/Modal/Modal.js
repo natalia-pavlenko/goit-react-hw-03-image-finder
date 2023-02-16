@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Overlay, LargeModal} from './Modal.styled';
+import { Overlay, LargeModal } from './Modal.styled';
 
-
-
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
@@ -40,4 +38,10 @@ class Modal extends Component {
     );
   }
 }
+
 export default Modal;
+
+Modal.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  largeImg: PropTypes.string.isRequired,
+};

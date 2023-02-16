@@ -1,20 +1,16 @@
-// import React from 'react';
-// import Loader from 'components/Loader';
-// // import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {LoadBtn
+} from './Button.styled'
+const Button = ({ onClick }) => {
+  return (
+    <LoadBtn type="submit" onClick={onClick}>
+      Load more
+    </LoadBtn>
+  );
+};
+export default Button;
 
-// const Button = ({onClick, isLoading }) => {
-//   return (
-//     <>
-//       {isLoading ? (
-//         <Loader />
-//       ) :(<button type="submit" onClick={onClick}>
-//           Load more
-//         </button>
-//       )}
-//     </>
-//   );
-// };
-// export default Button;
-
-
-
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
