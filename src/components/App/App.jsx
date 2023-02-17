@@ -8,8 +8,7 @@ import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import Searchbar from 'components/Searchbar/Searchbar';
 import ImageGallery from 'components/ImageGallery/ImageGallery';
-import {AppDiv, AppImg } from './App.styled';
-
+import { AppDiv, AppImg } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -33,7 +32,13 @@ export class App extends Component {
     }
   }
   getSearchQuery = name => {
-    this.setState({ searchQuery: name });
+    this.setState({
+      searchQuery: name,
+      gallery: [],
+      modalUrl: null,
+      showModal: false,
+      page: 1,
+    });
   };
 
   handleClickLoadMoreBtn = () => {
