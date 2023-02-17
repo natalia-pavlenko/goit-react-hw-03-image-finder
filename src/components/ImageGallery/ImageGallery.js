@@ -1,11 +1,17 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import PropTypes from 'prop-types';
-import {GalleryList} from './ImageGallery.styled'
+import { GalleryList } from './ImageGallery.styled';
 
 const ImageGallery = ({ gallery }) => {
   return (
     <GalleryList>
-      <ImageGalleryItem gallery={gallery} />
+      {gallery.map(img => (
+        <ImageGalleryItem
+          webformatURL={img.webformatURL}
+          id={img.id}
+          largeImageURL={img.largeImageURL}
+        />
+      ))}
     </GalleryList>
   );
 };
